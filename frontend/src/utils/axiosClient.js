@@ -2,10 +2,10 @@ import axios from "axios";
 import { getToken, clearSession } from "./auth";
 import { disconnectSocket } from "./socket";
 
-const API_BASE_URL = "http://localhost:8000/api";
+const API_BASE_URL = process.env.REACT_APP_API_URL || "https://whiteboard-project-iavy.onrender.com/api";
 
 const axiosClient = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || API_BASE_URL,
+  baseURL: API_BASE_URL,
   withCredentials: true,
 });
 

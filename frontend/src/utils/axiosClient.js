@@ -5,7 +5,7 @@ import { disconnectSocket } from "./socket";
 const API_BASE_URL = "http://localhost:8000/api";
 
 const axiosClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || API_BASE_URL,
+  baseURL: process.env.REACT_APP_API_URL || API_BASE_URL,
   withCredentials: true,
 });
 
